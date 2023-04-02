@@ -70,6 +70,7 @@ the address proxyRegistry is the contract proxy address of the user. It transfer
 ***Function cdpAllow ( address manager, uint cdp, address usr, uint ok):*** Allows/denies usr address to manage the cdp
 <br/>
 ***Function urnAllow:*** allows/denies usr address to manage the msg.sender address as dst for quit
+<br/>
 ***Function flux:*** moves wad amount of collateral from cdp address to dst address.
 <br/>
 ***Function move:*** moves rad amount of DAI from cdp address to dst address
@@ -85,7 +86,7 @@ the address proxyRegistry is the contract proxy address of the user. It transfer
 ***Function makeGemBag:*** it takes in the addresss of the gem i.e the gem that is not yet locked and an address is been returned to enable the deposit of the gem.
 <br/>
 ***Function lockETH(address manager, address ethJoin, uint cdp):*** it receives the Eth and convert it to WETH. the deposits msg.value amount of ETH in ethJoin adapter and executes frob to cdp increasing the locked value.
-v
+<br/>
 ***Function safeLockETH(address manager, address ethJoin, uint cdp address owner):*** sameas lockETH but requiring owner == cdp owner
 <br/>
 ***Function lockGem(address manager,address gemJoin, uint cdp, uint amt, bool transferFrom):*** it takes the token amount from users wallet i.e the gem to locked, and is been locked in gemJoin adapter and executes frob to cdp increasing the locked value. Gets funds from msg.sender if transferFrom == true
