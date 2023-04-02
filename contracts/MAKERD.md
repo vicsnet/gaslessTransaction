@@ -19,6 +19,7 @@ via their respective flip (collateral) auction. With large Vaults, partial confi
 collateral size will be processed until the urn becomes safe again.
 <br/>
 **Spotter** - Allows external actors to update the price feed in Vat for a given Ilk (collateral type).
+<br/>
 **Join** - The Join adapter is used to deposit/withdraw unlocked collateral into the Vat.
 Currently, GemJoin is only compatible with standard ERC20 tokens, but eventually there will be various types of Join adapters that are compatible with different Token Standards.
 <br/>
