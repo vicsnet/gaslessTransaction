@@ -24,6 +24,7 @@ Currently, GemJoin is only compatible with standard ERC20 tokens, but eventually
 <br/>
 **Flipper** - Collateral auction house. Each gem auction is unique and linked to a previously bitten urn (Vault). Investors bid with increasing amounts of DAI for a fixed GEM amount. When the DAI balance deficit is covered, bidders continue to bid for a
 decreasing gem size until the auction is complete. Remaining GEM is returned to the Vault owner.
+<br/>
 **DS-Token** - An implementation supporting the ERC20 Standard; part of the DappSys (DS) library.
 Contains database of MKR owners, transfer and supply logic.
 <br/>
@@ -41,11 +42,13 @@ collateralization, which is when the net value of all collateral types is less t
 collateral) is prioritized over the claims of Dai holders.
 <br/>
 **ESM** - The Emergency Shutdown Module (ESM) is a contract with the ability to call End.cage() and initiate ES. MKR holders join their funds, which are then immediately burnt. When the ESM's internal sum balance is equal to or greater than the minimum threshold, then End.cage() can be called.
+<br/>
 **RO (Rates Oracle)** - Through admin access to the Rates Module, the Rates Oracle enables more dynamic updates to the Risk Premium Rates, Base Rate and Savings Rate. As a secondary governance mechanism, the Rates Oracle allows MKR holders to vote with the IOUs they receive when locking up their MKR in DS-Chief. Furthermore, to vote they have to stake some amount of Dai (e.g. $1000 or $10,000), which will be passed on to the Buffer if they vote for a losing proposal.
 <br/>
 **VO (NFT/LEIN Vault Oracle)** - Controlled by authorized Risk Team(s), the VO holds admin access to add an NFT/LIEN Vault type on the fly under certain restrictions.
 <br/>
 **Mom** - Mom is a contract interface to adjust the risk parameters of the Maker Protocol. The chief in DS-Chief has the exclusive authority to call functions through Mom. The following contracts rely on Mom: Spotter, Cat, Vow, Vat, and Jug.
+<br/>
 **INT-RO (Rates Oracle Interface)** - Interface contract for the Rates Oracle. Accessible by the Rates Oracle. It has bounded authority over the Rates Module.
 <br/>
 **INT-VO (NFT/Lein Vault Oracle Interface)** - Interface contract for the NFT/LEIN Vault Oracle. It is authorized to add NFT/LEIN Vault types to the system.
@@ -60,6 +63,7 @@ the Dai is been transfered from the sender address to the contract address. the 
 ***GemJoinLike(apt).gem().deposit.value(msg.value)():*** This function takes the ether value to be converted to WETH, then the contract is beeen approve to spend the ether, the approved ether is added to the vault.
 <br/>
 ***Function gemJoin_join(address apt, address urn, uint amt, bool transferFrom):*** this takes in two addresses, an amount and a boolean. if the amount has been approved then this function joins the vault else it approves first then join the vault.
+<br/>
 ***Function open:*** Takes in two addresses and the bytes of the collateral type. the addresses are the user address and the manager's address. the managerlike is to formalise vault transfer enabling vault to be treated like asset. it creates the urnHandler
 <br/>
 ***Function give:*** takes in two addresses and the uint of the cdp.it transfers the ownership of cdp to usr address in the manager registry
